@@ -10,18 +10,18 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(3, 9, 23, 1),
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.only(left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FadeAnimation(1.2, Text("Login",
+            SizedBox(height: 200),
+            FadeAnimation(1.2, Text("Helloe there ,\nWelcome Back",
             style: TextStyle(color: Colors.white,fontSize: 40, fontWeight:FontWeight.bold),)),
-            SizedBox(height: 30),
+            SizedBox(height: 40),
             FadeAnimation(1.5, Container(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(20),
                 color: Colors.white
               ),
               child: Column(
@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintStyle: TextStyle(color: Colors.grey.withOpacity(.8)),
-                        hintText: "Email or Phone Number"
+                        hintText: "Username"
                       ),
                     ),
                   ),
@@ -53,18 +53,59 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             )),
-            SizedBox(height: 40),
-            FadeAnimation(1.8, Center(
-              child: Container(
-                width: 120,
+            SizedBox(height: 20),
+            Container(
+              child: FadeAnimation(1,Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child:  Text(
+                    "Forgot Password ?",
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(.5),
+                    ),
+                  ),
+                    ),
+
+                ],
+              ),
+            ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              child: FadeAnimation(1, Row(
+                children: <Widget>[
+                  Container(
+                    width: 370,
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Colors.blue[800]
                 ),
                 child: Center(child: Text("Login",style: TextStyle(color: Colors.white),),),
-              ),
-            ))
+                  ),
+                ],
+              ))
+            ),
+            SizedBox(height: 20),
+            Center(
+              child:Text(
+                "Do you haven't account ?",
+                style: TextStyle(
+                  color: Colors.grey
+                ),
+              )
+            ),
+            SizedBox(height: 15),
+             Center(
+              child:Text(
+                "Register",
+                style: TextStyle(
+                  color: Colors.grey
+                ),
+              )
+            )
           ],
         ),
       ),
