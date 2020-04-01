@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_splash_screan_login/Animations/FadeAnimation.dart';
+import 'package:flutter_splash_screan_login/Register.dart';
+import 'package:page_transition/page_transition.dart';
 
 
 
@@ -95,17 +97,17 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.grey
                 ),
-              )
+              ),
             ),
-            SizedBox(height: 15),
-             Center(
-              child:Text(
-                "Register",
-                style: TextStyle(
-                  color: Colors.grey
-                ),
-              )
-            )
+            SizedBox(height: 20),
+            Center(
+              child: InkWell(
+                child: Text("Register", style: TextStyle(color: Colors.white),),
+                onTap: (){
+                   Navigator.push(context, PageTransition(type: PageTransitionType.fade,child: Register()));
+                },
+              ),
+            ),
           ],
         ),
       ),
